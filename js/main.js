@@ -16,20 +16,24 @@ $( function ( ) {
 		
 		//ウィンドウサイズによって開閉とヘッダーの透過のタイミングを変更
 		if( window.matchMedia ( "( min-width : 1025px )" ).matches ) {
-			var close = 615, transmit = 720;
+			var close = 615, transmit = 720, h = 100, m = 30;
 		} else if( window.matchMedia ( "( min-width : 831px )" ).matches ) {
-			var close = 530, transmit = 620;
+			var close = 530, transmit = 620, h = 80, m = 25;
 		} else if( window.matchMedia ( "( min-width : 661px )" ).matches ) {
-			var close = 505, transmit = 600;
+			var close = 505, transmit = 600, h = 80, m = 25;
 		} else if( window.matchMedia ( "( min-width : 581px )" ).matches ) {
-			var close = 450, transmit = 550;
+			var close = 450, transmit = 550, h = 70, m = 20;
 		} else {
-			var close = 335, transmit = 500;
+			var close = 335, transmit = 500, h = 60, m = 20;
 		}
 		
 		if ( pos >= transmit ) {
 			$( "header" ).css ( {
-				background : "rgba( 255, 255, 255, "+.8+" )"
+				background : "rgba( 255, 255, 255, "+.8+" )",
+				height : h
+			});
+			$( "nav ul" ).animate ( {
+				marginTop : m
 			}, 500 );
 		} else if ( pos >= close ) {
 			$( "header, main" ).css ( {
