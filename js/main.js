@@ -9,9 +9,9 @@ $( function ( ) {
 		}, 500, "swing" );
 		return false;
 	});
-		
+			
 	//トップの扉の開閉
-	$( window ).scroll ( function ( ) { //スクロールバーが操作されたときに実行
+	var headerChange = function ( ) {
 		var pos = $( window ).scrollTop ( ); //スクロールバーの位置を取得
 		
 		//ウィンドウサイズによって開閉とヘッダーの透過のタイミングを変更
@@ -53,8 +53,11 @@ $( function ( ) {
 				backgroundPosition : "center top"
 			});
 		}
-	});
-		
+	};
+	
+	$( window ).scroll ( headerChange ); //スクロールバーが操作されたときに実行
+	$( "html, body" ).bind ( "touchmove", headerChange ); //スマホでタッチしたまま動かしたときに実行
+	
 	//トップへ戻るボタン
 	$( ".pagetop" ).click ( function ( ) {
 		$( "html, body" ).animate( {
