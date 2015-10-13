@@ -268,7 +268,7 @@ footer {
 		height: 200px;
 		-webkit-justify-content: center;
 		justify-content: center;
-		width: 85%;
+		width: 90%;
 	}
 	.work img {
 		height: 120px;
@@ -278,6 +278,7 @@ footer {
 	.work ul {
 		border-right: solid 1px #91c6d9;
 		height: 200px;
+		padding: 5px 15px;
 		width: 55%;
 	}
 	.work li:nth-child(2) {
