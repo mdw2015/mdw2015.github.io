@@ -263,7 +263,9 @@ footer {
 	.work {
 		-webkit-align-content: center;
 		align-content: center;
+		-webkit-flex-direction: column;
 		flex-direction: column;
+		-webkit-flex-wrap: wrap;
 		flex-wrap: wrap;
 		height: 200px;
 		-webkit-justify-content: center;
